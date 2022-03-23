@@ -11,7 +11,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", function (req, res) {
-  let day = date();
+  // let day = date.getDate(); // for getting full date
+     let day = date.getDay();  // for getting only day 
   res.render("list", { listTitle: day, newListItems: items });
 });
 
